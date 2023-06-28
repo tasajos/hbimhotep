@@ -8,6 +8,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ServicedeskComponent } from './Components/servicedesk/servicedesk.component';
 import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { ProcessmakerComponent } from './Components/processmaker/processmaker.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     DashboardComponent,
     ServicedeskComponent,
     CabeceraComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProcessmakerComponent
   ],
   imports: [
     BrowserModule,
