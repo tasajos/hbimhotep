@@ -7,8 +7,8 @@ import { ProcessmakerComponent } from './Components/processmaker/processmaker.co
 const routes: Routes = [
   {path: '', redirectTo:'principal',pathMatch:'full'},
   {path: 'principal', component:PrincipalComponent},
-  {path: 'sdesk', component:ServicedeskComponent},
   {path: 'pmaker', component:ProcessmakerComponent},
+  {path: 'serdesk', component:ServicedeskComponent},
 
   {path: '**', redirectTo: 'principal', pathMatch:'full'},
 
