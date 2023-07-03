@@ -6,6 +6,7 @@ import { ProcessmakerComponent } from './Components/processmaker/processmaker.co
 import { PanelComponent } from './Components/panel/panel.component';
 import { AdministracionComponent } from './Components/panel/administracion/administracion.component';
 import { MantenimientoComponent } from './Components/panel/mantenimiento/mantenimiento.component';
+import { LoginComponent } from './Components/login/login.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'principal',pathMatch:'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'panel', component:PanelComponent},
   {path: 'cusuario', component:AdministracionComponent},
   {path: 'mtto', component:MantenimientoComponent},
+  {path: 'login', component:LoginComponent},
 
   {path: '**', redirectTo: 'principal', pathMatch:'full'},
 

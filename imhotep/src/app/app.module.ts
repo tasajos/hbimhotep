@@ -26,6 +26,7 @@ import { PanelComponent } from './Components/panel/panel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministracionComponent } from './Components/panel/administracion/administracion.component';
 import { MantenimientoComponent } from './Components/panel/mantenimiento/mantenimiento.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MantenimientoComponent } from './Components/panel/mantenimiento/manteni
     ProcessmakerComponent,
     PanelComponent,
     AdministracionComponent,
-    MantenimientoComponent
+    MantenimientoComponent,
+    LoginComponent
 
 
   ],
