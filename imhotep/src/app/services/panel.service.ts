@@ -14,8 +14,8 @@ export class PanelService {
    //entorno para llamar
 
    private Myappurl: string = environment.endpoint;
-   private Myapiurl: string = 'api/ReporteSD';
-   private Myapiurlp: string = 'api/ReporteSD';
+   private Myapiurl: string = 'api/Panel';
+   private Myapiurlp: string = 'api/Panel';
  
  
  //constructor
@@ -23,14 +23,14 @@ export class PanelService {
  
  
    //funcion obtener resultados
-   getregistros(): Observable<crearusuarioInter[]> {
+   getusuarios(): Observable<crearusuarioInter[]> {
       
      return this.http.get<crearusuarioInter[]>(this.Myappurl+this.Myapiurl);
    }
  
-     addregistros (cajachica: crearusuarioInter): Observable<crearusuarioInter>{
+     addusuarios (crearusuario: crearusuarioInter): Observable<crearusuarioInter>{
  
-       return this.http.post<crearusuarioInter>(`${this.Myappurl}${this.Myapiurlp}`,cajachica);
+       return this.http.post<crearusuarioInter>(`${this.Myappurl}${this.Myapiurlp}`,crearusuario);
        
      }
  

@@ -10,26 +10,26 @@
 
 <br>
 <div class="form-container">
-<form class="example-form">
+<form class="example-form" [formGroup]="formulario" (ngSubmit)="registrarusuario()" >
  
     <table class="example-full-width" cellspacing="0"><tr>
-      <td><mat-form-field class="example-full-width">
+      <td><mat-form-field>
         <mat-label>NOMBRE</mat-label>
-        <input matInput>
+        <input matInput formControlName="nombre">
       </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
+      <td><mat-form-field class="example-full-width" >
         <mat-label>APELLIDO</mat-label>
-        <input matInput>
+        <input matInput formControlName="apellido">
       </mat-form-field></td>
     </tr>
 <tr>
-    <td><mat-form-field class="example-full-width">
+    <td><mat-form-field class="example-full-width" >
         <mat-label>CI</mat-label>
-        <input matInput>
+        <input type="number" matInput formControlName="ci">
       </mat-form-field></td>
-      <td><mat-form-field>
+      <td><mat-form-field  >
         <mat-label>EXTENSION</mat-label>
-        <mat-select>
+        <mat-select formControlName="Extension">
           <mat-option value="LP">LP</mat-option>
           <mat-option value="CBBA">CBBA</mat-option>
           <mat-option value="STA CRUZ">STA CRUZ</mat-option>
@@ -49,17 +49,17 @@
  
   
     <table class="example-full-width" cellspacing="0"><tr>
-      <td><mat-form-field>
+      <td><mat-form-field >
         <mat-label>Tipo</mat-label>
-        <mat-select>
+        <mat-select formControlName="tipo">
           <mat-option value="admin">Administrador</mat-option>
           <mat-option value="usuario">Usuario Standard</mat-option>
           <mat-option value="manager">Manager / CEO</mat-option>
         </mat-select>
       </mat-form-field></td>
-      <mat-form-field>
+      <mat-form-field >
         <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
@@ -68,9 +68,10 @@
       <td>
         </td>
     </tr></table>
+    <button type="submit" class="btn btn-primary ms-2" >REGISTRAR</button> 
+    <button type="button" class="btn btn-warning ms-2" routerLink="/principal">VOLVER</button> 
   </form>
-  <button type="button" class="btn btn-primary ms-2" >REGISTRAR</button> 
-  <button type="button" class="btn btn-warning ms-2" >VOLVER</button> 
+ 
 </div>
   
   

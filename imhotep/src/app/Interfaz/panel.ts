@@ -6,5 +6,5 @@ export interface crearusuarioInter {
     ci:number,
     Extension:string,
     tipo:string,
-    passwprd:string,
+    password:string,
     }
