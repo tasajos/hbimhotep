@@ -6,6 +6,15 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar'; // Import MatSnackBarModule
+import {MatButtonModule} from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
+
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrincipalComponent } from './Components/principal/principal.component';
@@ -16,6 +25,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ProcessmakerComponent } from './Components/processmaker/processmaker.component';
 import { PanelComponent } from './Components/panel/panel.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdministracionComponent } from './Components/panel/administracion/administracion.component';
+import { MantenimientoComponent } from './Components/panel/mantenimiento/mantenimiento.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +37,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CabeceraComponent,
     NavbarComponent,
     ProcessmakerComponent,
-    PanelComponent
+    PanelComponent,
+    AdministracionComponent,
+    MantenimientoComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +51,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
+    
     
   ],
   providers: [],

@@ -21,7 +21,7 @@
           
 
           <li class="nav-item">
-            <button type="button" class="btn btn-primary ms-5" routerLink="/panel">Panel de Control</button>           
+            <button type="button" class="btn btn-primary ms-5" [matMenuTriggerFor]="cont" >Panel de Control</button>           
           </li>
 
         </ul>
@@ -29,3 +29,9 @@
       </div>
     </div>
   </nav>
+
+  <mat-menu #cont="matMenu">
+    <button mat-menu-item routerLink="/cusuario">GESTION USUARIO</button>
+    <button mat-menu-item routerLink="/mtto" >MANTENIMIENTO</button>
+    
+  </mat-menu>

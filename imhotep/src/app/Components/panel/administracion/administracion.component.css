@@ -1,0 +1,10 @@
+.texprincipal {
+
+    text-align: center;
+}
+
+.contenido {
+    width: 30%;
+    margin-left: 20px; /* Mover el contenido hacia la izquierda */
+    
+}
