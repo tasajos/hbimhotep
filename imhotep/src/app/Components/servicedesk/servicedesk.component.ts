@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SdeskService } from 'src/app/services/sdesk.service';
 import { HttpClient } from '@angular/common/http';
 import {registroticket  } from 'src/app/Interfaz/sdesk';
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-servicedesk',
@@ -19,6 +20,7 @@ export class ServicedeskComponent implements OnInit {
     private fb: FormBuilder,
     private _rregistro: SdeskService,
     private router: Router,
+    private _snackBar: MatSnackBar,
     private http: HttpClient,
     private route: ActivatedRoute
   ) {
@@ -41,8 +43,11 @@ export class ServicedeskComponent implements OnInit {
     };
     // Enviamos objeto al backend
     this._rregistro.addregistros(rcactivo).subscribe(_data => {
+      this.mensajeExito('registrado');
+      setTimeout(() => {
+        location.reload();
+      }, 3000); // Wait for 5 seconds (5000 milliseconds) before reloading the page
       
-      location.reload();
      // this.router.navigate(['/principal']);;
     //this.numero++; // Incrementamos el número después de cada registro exitoso
   });
@@ -52,12 +57,12 @@ export class ServicedeskComponent implements OnInit {
 
  
  //
-  //mensajeExito(texto: string) {
-    //this._snackBar.open(`El proceso fue realizado y ${texto} con exito`, '', {
-      //duration: 2000,
-      //horizontalPosition: 'right',
-    //});
- // }
+  mensajeExito(texto: string) {
+    this._snackBar.open(`El proceso fue realizado y ${texto} con exito`, '', {
+    duration: 3000,
+    horizontalPosition: 'right',
+    });
+  }
 
   ngOnInit(): void {
 
