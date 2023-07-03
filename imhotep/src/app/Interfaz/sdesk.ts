@@ -4,4 +4,5 @@ export interface registroticket {
     area: string,
     tipo:string,
     descripcion:string,
+    estado:string,
     }

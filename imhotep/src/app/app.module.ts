@@ -11,7 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -56,7 +56,8 @@ import { MantenimientoComponent } from './Components/panel/mantenimiento/manteni
     MatMenuModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
     
     
   ],

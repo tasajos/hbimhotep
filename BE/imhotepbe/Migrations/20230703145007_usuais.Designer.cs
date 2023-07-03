@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using imhotepbe.Models;
 
@@ -11,9 +12,11 @@ using imhotepbe.Models;
 namespace imhotepbe.Migrations
 {
     [DbContext(typeof(imhotepcontext))]
-    partial class imhotepcontextModelSnapshot : ModelSnapshot
+    [Migration("20230703145007_usuais")]
+    partial class usuais
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,10 +51,6 @@ namespace imhotepbe.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("tipo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -80,10 +79,6 @@ namespace imhotepbe.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("descripcion")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("estado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -10,4 +10,7 @@ import {FormsModule} from '@angular/forms';
 })
 export class AdministracionComponent {
 
+  hide: boolean = true;
+
+
 }

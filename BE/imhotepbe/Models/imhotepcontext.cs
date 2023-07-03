@@ -1,4 +1,5 @@
-﻿using imhotepbe.Models.Reporte;
+﻿using imhotepbe.Models.Panel;
+using imhotepbe.Models.Reporte;
 using Microsoft.EntityFrameworkCore;
 
 namespace imhotepbe.Models
@@ -16,8 +17,14 @@ namespace imhotepbe.Models
 
 
 
-    }
+        ////////////
+        ///panel////
+        ////////////
+        public DbSet<cusuario> Usuarios { get; set; } //<clase> Nombre de la tabla
+
 
     }
+
+}
 
 

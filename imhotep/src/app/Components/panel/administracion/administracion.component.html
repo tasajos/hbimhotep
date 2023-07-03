@@ -9,34 +9,44 @@
 <h1 class="texprincipal"> GESTION DE USUARIOS</h1>
 
 <br>
-
+<div class="form-container">
 <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label></mat-label>
-      <input matInput disabled value="Hospital Belga">
-    </mat-form-field>
-  
+ 
     <table class="example-full-width" cellspacing="0"><tr>
       <td><mat-form-field class="example-full-width">
-        <mat-label>Nombre</mat-label>
+        <mat-label>NOMBRE</mat-label>
         <input matInput>
       </mat-form-field></td>
       <td><mat-form-field class="example-full-width">
-        <mat-label>Apellido</mat-label>
+        <mat-label>APELLIDO</mat-label>
         <input matInput>
       </mat-form-field></td>
-    </tr></table>
-  
-    <p>
-      <mat-form-field class="example-full-width">
+    </tr>
+<tr>
+    <td><mat-form-field class="example-full-width">
         <mat-label>CI</mat-label>
-        <textarea matInput placeholder="132456 cb"></textarea>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Direccion</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
-    </p>
+        <input matInput>
+      </mat-form-field></td>
+      <td><mat-form-field>
+        <mat-label>EXTENSION</mat-label>
+        <mat-select>
+          <mat-option value="LP">LP</mat-option>
+          <mat-option value="CBBA">CBBA</mat-option>
+          <mat-option value="STA CRUZ">STA CRUZ</mat-option>
+          <mat-option value="TJ">TJ</mat-option>
+          <mat-option value="BENI">BENI</mat-option>
+          <mat-option value="PANDO">PANDO</mat-option>
+          <mat-option value="CHUQUISACA">CHUQUISACA</mat-option>
+          <mat-option value="ORURO">ORURO</mat-option>
+          <mat-option value="POTOSI">POTOSI</mat-option>
+        </mat-select>
+      </mat-form-field></td>
+
+</tr>
+      
+    </table>
+  
+ 
   
     <table class="example-full-width" cellspacing="0"><tr>
       <td><mat-form-field>
@@ -44,15 +54,25 @@
         <mat-select>
           <mat-option value="admin">Administrador</mat-option>
           <mat-option value="usuario">Usuario Standard</mat-option>
+          <mat-option value="manager">Manager / CEO</mat-option>
         </mat-select>
       </mat-form-field></td>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
       
       <td>
         </td>
     </tr></table>
   </form>
-  
   <button type="button" class="btn btn-primary ms-2" >REGISTRAR</button> 
+  <button type="button" class="btn btn-warning ms-2" >VOLVER</button> 
+</div>
+  
   
   <br>
 <br>

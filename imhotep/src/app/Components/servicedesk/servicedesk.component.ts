@@ -28,6 +28,7 @@ export class ServicedeskComponent implements OnInit {
       area: ['', Validators.required],
       tipo: ['', Validators.required],
       descripcion: ['', Validators.required],
+      estado: ['', Validators.required],
  
          });
   }
@@ -38,6 +39,7 @@ export class ServicedeskComponent implements OnInit {
       area: this.formulario.value.area,
       tipo: this.formulario.value.tipo,
       descripcion: this.formulario.value.descripcion,
+      estado: this.formulario.value.estado,
      
 
     };
@@ -46,7 +48,7 @@ export class ServicedeskComponent implements OnInit {
       this.mensajeExito('registrado');
       setTimeout(() => {
         location.reload();
-      }, 3000); // Wait for 5 seconds (5000 milliseconds) before reloading the page
+      }, 2000); // Wait for 5 seconds (5000 milliseconds) before reloading the page
       
      // this.router.navigate(['/principal']);;
     //this.numero++; // Incrementamos el número después de cada registro exitoso
@@ -59,7 +61,7 @@ export class ServicedeskComponent implements OnInit {
  //
   mensajeExito(texto: string) {
     this._snackBar.open(`El proceso fue realizado y ${texto} con exito`, '', {
-    duration: 3000,
+    duration: 2000,
     horizontalPosition: 'right',
     });
   }
