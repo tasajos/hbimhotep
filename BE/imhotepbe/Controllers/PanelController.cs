@@ -60,8 +60,34 @@ namespace imhotepbe.Controllers
             }
 
         }
+        [HttpPost("iniciosesion")]
 
 
+        public async Task<IActionResult> Postsesion(login Usuarios)
+        {
+            try
+            {
+                var usuario = await _context.Usuarios.SingleOrDefaultAsync(u => u.nombre == Usuarios.nombre);
+
+                if (usuario != null && usuario.password == Usuarios.password)
+                {
+                    // Autenticación exitosa
+                    // Puedes devolver una respuesta 200 OK o algún otro código de estado adecuado
+                    return Ok();
+                }
+                else
+                {
+                    // Credenciales inválidas
+                    // Puedes devolver una respuesta 401 Unauthorized o algún otro código de estado adecuado
+                    return Unauthorized();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle other errors
+                return BadRequest(ex.Message);
+            }
+        }
 
     }
 }

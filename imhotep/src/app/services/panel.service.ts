@@ -16,6 +16,7 @@ export class PanelService {
    private Myappurl: string = environment.endpoint;
    private Myapiurl: string = 'api/Panel';
    private Myapiurlp: string = 'api/Panel';
+   private Myapiurlpi: string = 'api/Panel/iniciosesion';
  
  
  //constructor
@@ -34,6 +35,15 @@ export class PanelService {
        
      }
  
+     verificarAutenticacion(nombre: string, password: string) {
+      // Realizar la solicitud HTTP para verificar la autenticación en tu backend
+      const body = {
+        nombre: nombre,
+        password: password
+      };
+  
+      return this.http.post(`${this.Myappurl}${this.Myapiurlpi}`, body);
+    }
  
  
  

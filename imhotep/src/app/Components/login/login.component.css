@@ -30,3 +30,8 @@
     padding: 15px;
     text-align: center;
   }
+
+  .mat-snack-bar-container.invalid-password {
+    color: red;
+    font-weight: bold;
+  }
