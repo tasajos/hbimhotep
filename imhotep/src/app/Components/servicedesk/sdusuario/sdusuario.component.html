@@ -1,0 +1,85 @@
+<app-cabecera></app-cabecera>
+<br>
+<br>
+<br>
+<P></P>
+<br>
+<app-navbarusuario></app-navbarusuario>
+<br>
+<h1 class="texprincipal"> REPORTE SERVICE DESK</h1>
+
+<br>
+
+<div class="container text-center contenido">
+  <form [formGroup]="formulario" (ngSubmit)="registrarcuenta()">
+
+        <div class="row">
+          <div class="col">
+            SELECCIONE EL AREA:
+          </div>
+          <div class="col">
+                <select class="form-select" aria-label="Default select example" formControlName="area">
+                <option selected>Seleccione:</option>
+                <option value="Enfermeria">Enfermeria</option>
+                <option value="Administracion">Administracion</option>
+                <option value="Seguro">Seguro</option>
+                <option value="Emergencia">Emergencia</option>
+                <option value="Rayos X">Rayos X</option>
+                <option value="Almacen">Almacen</option>
+                <option value="Consulta Externa">Consulta Externa</option>
+                <option value="UTI">UTI</option>
+                <option value="Contabilidad">Contabilidad</option>
+                <option value="Consultorio">Consultorio</option>
+                <option value="Ecografia">Ecografia</option>
+                <option value="Laboratorio">Laboratorio</option>
+                <option value="Cafeteria">Cafeteria</option>
+                <option value="Jefatura de Enfermeria">Jefatura de Enfermeria</option>
+                <option value="Cardiologia">Cardiologia</option>
+              </select>
+          </div>
+          
+        </div>
+        <br> 
+        <div class="row">
+          <div class="col">
+            ESTADO:
+          </div>
+          <div class="col">
+                <select class="form-select" aria-label="Default select example" formControlName="estado">
+                <option value="Nuevo">Nuevo</option>
+                <option value="Pendiente">Pendiente</option>
+                <option value="Completado">Completado</option>
+               
+              </select>
+          </div>
+          
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            TIPO:
+          </div>
+          <div class="col">
+                <select class="form-select" aria-label="Default select example" formControlName="tipo">
+                <option selected>Seleccione:</option>
+                <option value="Requerimiento">Requerimiento</option>
+                <option value="Incidente">Incidente</option>
+                
+              </select>
+          </div>
+       
+
+            
+            <div class="mb-3">
+                <br>
+                <label for="exampleFormControlTextarea1" class="form-label"><strong>Descripcion:</strong></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="descripcion"></textarea>
+              </div>
+              
+          </div>
+          <div>
+            <button type="submit" style="background-image: url(../../../assets/img/marca-comercial.png); background-size: cover; width: 50px; height: 50px; margin-right: 10px; border: none;"></button>
+            <button type="button" style="background-image: url(../../../assets/img/borrar.png); background-size: cover; width: 50px; height: 50px; border: 1px solid transparent;"></button>
+
+          </div>
+          

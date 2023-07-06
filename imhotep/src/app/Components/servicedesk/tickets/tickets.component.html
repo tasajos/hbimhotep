@@ -1,0 +1,74 @@
+<app-cabecera></app-cabecera>
+<br><br><br>
+<br><br><br>
+<app-navbar></app-navbar>
+
+<div class="container">
+  <br>
+  <br>
+    <h1>TICKETS NUEVOS</h1>
+<br>
+<br>
+    <mat-form-field>
+        <mat-label>Filtrar</mat-label>
+        <input matInput (keyup)="applyFilter($event)"  placeholder="Codigo" #input autocomplete="off">
+      </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z2 black-text table-bordered" matSort>
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Codigo </th>
+          <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="tipo">
+          <th mat-header-cell *matHeaderCellDef> Tipo </th>
+          <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="area">
+            <th mat-header-cell *matHeaderCellDef> Area </th>
+            <td mat-cell *matCellDef="let element"> {{element.area}} </td>
+          </ng-container>
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+          </ng-container>
+          <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+          </ng-container>
+      
+                 
+               
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef >
+            <a class="btn btn-primary"  role="button">Acciones</a> </th>
+          <td mat-cell *matCellDef="let element"> 
+            <mat-icon matTooltip="Ver" routerLink="/verusuarios/{{element.id}}" class="search" fontIcon="search"></mat-icon>
+            <mat-icon matTooltip="Editar" routerLink="/editarusuarios/1" class="edit"fontIcon="edit"></mat-icon>
+            <!--<mat-icon  (click)="eliminarPersonal(element.id)"matTooltip="Borrar" class="delete" fontIcon="delete"></mat-icon>-->
+          </td>
+        </ng-container>
+        
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      <mat-paginator [pageSizeOptions]="[40, 80, 100,150]"
+      showFirstLastButtons
+      aria-label="Selecciona pagina de ">
+    </mat-paginator>
+    
+    
+     <br>
+            
+     <button type="button" class="btn btn-warning" routerLink="/principal">Volver</button>
+    
+           
+          
+      
+    </div>
+

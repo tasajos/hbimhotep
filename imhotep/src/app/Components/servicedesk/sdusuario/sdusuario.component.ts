@@ -8,13 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-servicedesk',
-  templateUrl: './servicedesk.component.html',
-  styleUrls: ['./servicedesk.component.css']
+  selector: 'app-sdusuario',
+  templateUrl: './sdusuario.component.html',
+  styleUrls: ['./sdusuario.component.css']
 })
-export class ServicedeskComponent implements OnInit {
+export class SdusuarioComponent implements OnInit {
   formulario: FormGroup;
   codigo: number = 0;
+ 
 
   constructor(
     private fb: FormBuilder,
@@ -48,6 +49,7 @@ export class ServicedeskComponent implements OnInit {
       // Enviamos objeto al backend
       this._rregistro.addregistros(this.codigo, rcactivo).subscribe(() => {
         this.mensajeExito('registrado');
+     
         setTimeout(() => {
           location.reload();
         }, 2000); // Wait for 2 seconds before reloading the page

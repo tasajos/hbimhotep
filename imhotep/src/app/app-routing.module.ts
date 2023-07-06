@@ -8,6 +8,9 @@ import { AdministracionComponent } from './Components/panel/administracion/admin
 import { MantenimientoComponent } from './Components/panel/mantenimiento/mantenimiento.component';
 import { LoginComponent } from './Components/login/login.component';
 import { PrincipalusuarioComponent } from './Components/principalusuario/principalusuario.component';
+import { SdusuarioComponent } from './Components/servicedesk/sdusuario/sdusuario.component';
+import { ListaticketComponent } from './Components/servicedesk/listaticket/listaticket.component';
+import { TicketsComponent } from './Components/servicedesk/tickets/tickets.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'principal',pathMatch:'full'},
@@ -19,6 +22,9 @@ const routes: Routes = [
   {path: 'mtto', component:MantenimientoComponent},
   {path: 'login', component:LoginComponent},
   {path: 'principalu', component:PrincipalusuarioComponent},
+  {path: 'servicedesk', component:SdusuarioComponent},
+  {path: 'listaticket', component:ListaticketComponent},
+  {path: 'tickets', component:TicketsComponent},
 
   {path: '**', redirectTo: 'principal', pathMatch:'full'},
 

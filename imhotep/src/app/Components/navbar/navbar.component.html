@@ -13,7 +13,7 @@
             <button type="button" class="btn btn-primary" routerLink="/principal">Inicio</button>  
           </li>
           <li class="nav-item">
-            <button type="button" class="btn btn-primary ms-2" routerLink="/serdesk">Service Desk</button>           
+            <button type="button" class="btn btn-primary ms-2" routerLink="/serdesk" [matMenuTriggerFor]="tickets" >Service Desk</button>           
           </li>
           <li class="nav-item">
             <button type="button" class="btn btn-primary ms-2" routerLink="/pmaker">Process Maker</button>           
@@ -32,7 +32,12 @@
 
   <mat-menu #cont="matMenu">
     <button mat-menu-item routerLink="/cusuario">GESTION USUARIO</button>
-    <button mat-menu-item routerLink="/mtto" >MANTENIMIENTO</button>
+    <button mat-menu-item routerLink="/listaticket" >TICKETS</button>
     <button mat-menu-item routerLink="/login" >LOGIN</button>
     
+  </mat-menu>
+
+  <mat-menu #tickets="matMenu">
+    <button mat-menu-item routerLink="/tickets">TICKETS</button>
+       
   </mat-menu>

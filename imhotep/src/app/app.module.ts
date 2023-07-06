@@ -12,6 +12,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +33,9 @@ import { MantenimientoComponent } from './Components/panel/mantenimiento/manteni
 import { LoginComponent } from './Components/login/login.component';
 import { NavbarusuarioComponent } from './Components/navbarusuario/navbarusuario.component';
 import { PrincipalusuarioComponent } from './Components/principalusuario/principalusuario.component';
+import { SdusuarioComponent } from './Components/servicedesk/sdusuario/sdusuario.component';
+import { ListaticketComponent } from './Components/servicedesk/listaticket/listaticket.component';
+import { TicketsComponent } from './Components/servicedesk/tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +51,10 @@ import { PrincipalusuarioComponent } from './Components/principalusuario/princip
     MantenimientoComponent,
     LoginComponent,
     NavbarusuarioComponent,
-    PrincipalusuarioComponent
+    PrincipalusuarioComponent,
+    SdusuarioComponent,
+    ListaticketComponent,
+    TicketsComponent
 
 
   ],
@@ -62,7 +72,10 @@ import { PrincipalusuarioComponent } from './Components/principalusuario/princip
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule
     
     
   ],

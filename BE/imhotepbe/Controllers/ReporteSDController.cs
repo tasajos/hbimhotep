@@ -42,26 +42,50 @@ namespace imhotepbe.Controllers
         }
 
         [HttpPost]
-
-        public async Task<IActionResult> Post(reporteini ReporteSD)
+        public async Task<IActionResult> Post(int codigo, reporteini ReporteSD)
         {
             try
             {
                 ReporteSD.FechaCreacion = DateTime.Now;
+                ReporteSD.codigo = codigo; // Assign the provided codigo value
                 _context.Add(ReporteSD);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction("Get", new { Id = ReporteSD.id }, ReporteSD);
-
             }
             catch (Exception ex)
             {
                 // Handle other errors
                 return BadRequest(ex.Message);
             }
-
         }
 
+        [HttpGet("ultimoCodigo")]
+        public async Task<IActionResult> GetUltimoCodigo()
+        {
+            try
+            {
+                var ultimoCodigo = await _context.ReporteSD.MaxAsync(r => r.codigo);
+                return Ok(ultimoCodigo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
+        [HttpGet("nuevos")]
+        public async Task<IActionResult> GetNuevosRegistros()
+        {
+            try
+            {
+                var nuevosRegistros = await _context.ReporteSD.Where(r => r.estado == "nuevo").ToListAsync();
+                return Ok(nuevosRegistros);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
     }
 

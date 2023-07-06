@@ -5,4 +5,6 @@ export interface registroticket {
     tipo:string,
     descripcion:string,
     estado:string,
+    codigo?:number,
+    
     }
