@@ -49,9 +49,11 @@ export class AdministracionComponent implements OnInit {
       Extension: this.formulario.value.Extension,
       tipo: this.formulario.value.tipo,
       password: this.formulario.value.password,
-     
+      variabletipo: 0 
 
     };
+    rcactivo.variabletipo = this._ringresosservice.asignarVariableTipo(rcactivo.tipo);
+
     // Enviamos objeto al backend
     this._ringresosservice.addusuarios(rcactivo).subscribe(_data => {
       this.mensajeExito('registrado');
