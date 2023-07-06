@@ -7,4 +7,6 @@ export interface crearusuarioInter {
     Extension:string,
     tipo:string,
     password:string,
+    variabletipo?:number,
+   
     }

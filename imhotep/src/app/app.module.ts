@@ -27,6 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministracionComponent } from './Components/panel/administracion/administracion.component';
 import { MantenimientoComponent } from './Components/panel/mantenimiento/mantenimiento.component';
 import { LoginComponent } from './Components/login/login.component';
+import { NavbarusuarioComponent } from './Components/navbarusuario/navbarusuario.component';
+import { PrincipalusuarioComponent } from './Components/principalusuario/principalusuario.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { LoginComponent } from './Components/login/login.component';
     PanelComponent,
     AdministracionComponent,
     MantenimientoComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarusuarioComponent,
+    PrincipalusuarioComponent
 
 
   ],

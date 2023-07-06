@@ -4,6 +4,7 @@ using imhotepbe.Models.Reporte;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace imhotepbe.Controllers
 {
@@ -11,15 +12,11 @@ namespace imhotepbe.Controllers
     [ApiController]
     public class PanelController : ControllerBase
     {
-
         private readonly imhotepcontext _context;
 
         public PanelController(imhotepcontext context)
         {
-
-            //RegistrosSD
             _context = context;
-
         }
 
         [HttpGet]
@@ -32,17 +29,11 @@ namespace imhotepbe.Controllers
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
-
-
             }
-
-
         }
 
         [HttpPost]
-
         public async Task<IActionResult> Post(cusuario Usuarios)
         {
             try
@@ -51,18 +42,14 @@ namespace imhotepbe.Controllers
                 _context.Add(Usuarios);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction("Get", new { Id = Usuarios.id }, Usuarios);
-
             }
             catch (Exception ex)
             {
-                // Handle other errors
                 return BadRequest(ex.Message);
             }
-
         }
+
         [HttpPost("iniciosesion")]
-
-
         public async Task<IActionResult> Postsesion(login Usuarios)
         {
             try
@@ -71,23 +58,84 @@ namespace imhotepbe.Controllers
 
                 if (usuario != null && usuario.password == Usuarios.password)
                 {
-                    // Autenticación exitosa
-                    // Puedes devolver una respuesta 200 OK o algún otro código de estado adecuado
                     return Ok();
                 }
                 else
                 {
-                    // Credenciales inválidas
-                    // Puedes devolver una respuesta 401 Unauthorized o algún otro código de estado adecuado
                     return Unauthorized();
                 }
             }
             catch (Exception ex)
             {
-                // Handle other errors
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("iniciosesion/tipo/{nombre}")]
+        public async Task<IActionResult> GetTipoUsuario(string nombre)
+        {
+            try
+            {
+                var usuario = await _context.Usuarios.SingleOrDefaultAsync(u => u.nombre == nombre);
+
+                if (usuario != null)
+                {
+                    var tipoUsuario = usuario.tipo;
+                    return Ok(new { tipo = tipoUsuario });
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("iniciosesion")]
+        public async Task<IActionResult> GetTipoUsuario([FromQuery] string nombre, [FromQuery] string password)
+        {
+            try
+            {
+                var usuario = await _context.Usuarios.SingleOrDefaultAsync(u => u.nombre == nombre && u.password == password);
+
+                if (usuario != null)
+                {
+                    return Ok(usuario.tipo);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
                 return BadRequest(ex.Message);
             }
         }
 
+
+        [HttpGet("variabletipo/{nombre}")]
+        public async Task<IActionResult> GetVariableTipo(string nombre)
+        {
+            try
+            {
+                var usuario = await _context.Usuarios.SingleOrDefaultAsync(u => u.nombre == nombre);
+
+                if (usuario != null)
+                {
+                    var variableTipo = usuario.variabletipo;
+                    return Ok(variableTipo);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
