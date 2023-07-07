@@ -7,4 +7,5 @@ export interface registroticket {
     estado:string,
     codigo?:number,
     
+    
     }
