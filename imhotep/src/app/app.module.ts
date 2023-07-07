@@ -15,7 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatCardModule } from '@angular/material/card';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +36,8 @@ import { PrincipalusuarioComponent } from './Components/principalusuario/princip
 import { SdusuarioComponent } from './Components/servicedesk/sdusuario/sdusuario.component';
 import { ListaticketComponent } from './Components/servicedesk/listaticket/listaticket.component';
 import { TicketsComponent } from './Components/servicedesk/tickets/tickets.component';
+import { EticketComponent } from './Components/servicedesk/tickets/eticket/eticket.component';
+import { VticketComponent } from './Components/servicedesk/tickets/vticket/vticket.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { TicketsComponent } from './Components/servicedesk/tickets/tickets.compo
     PrincipalusuarioComponent,
     SdusuarioComponent,
     ListaticketComponent,
-    TicketsComponent
+    TicketsComponent,
+    EticketComponent,
+    VticketComponent
 
 
   ],
@@ -75,7 +79,8 @@ import { TicketsComponent } from './Components/servicedesk/tickets/tickets.compo
     MatIconModule,
     MatDialogModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule
     
     
   ],

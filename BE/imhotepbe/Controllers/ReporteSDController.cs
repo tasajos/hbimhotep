@@ -87,6 +87,22 @@ namespace imhotepbe.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+
+        public async Task<IActionResult> Get(int id)
+        {
+            try
+            {
+                var listickets = await _context.ReporteSD.FindAsync(id);
+                return Ok(listickets);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 
 }

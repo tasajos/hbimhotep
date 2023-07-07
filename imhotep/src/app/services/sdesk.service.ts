@@ -17,6 +17,7 @@ export class SdeskService {
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/ReporteSD';
   private Myapiurlp: string = 'api/ReporteSD';
+  private Myapiurid: string = 'api/ReporteSD/';
   private Myapiurlsd: string = 'api/ReporteSD/nuevos';
 
 
@@ -49,6 +50,12 @@ export class SdeskService {
       return this.http.get<number>(`${this.Myappurl}${this.Myapiurlp}/ultimoCodigo`);
     }
 
+
+    getidticket(id:number): Observable<registroticket>{
+
+      return this.http.get<registroticket>(`${this.Myappurl}${this.Myapiurid}${id}`)
+  
+    }
 
 //////////////////////////
 ///OTROS          ///////

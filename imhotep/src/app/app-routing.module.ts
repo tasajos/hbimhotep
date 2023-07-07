@@ -11,6 +11,8 @@ import { PrincipalusuarioComponent } from './Components/principalusuario/princip
 import { SdusuarioComponent } from './Components/servicedesk/sdusuario/sdusuario.component';
 import { ListaticketComponent } from './Components/servicedesk/listaticket/listaticket.component';
 import { TicketsComponent } from './Components/servicedesk/tickets/tickets.component';
+import { VticketComponent } from './Components/servicedesk/tickets/vticket/vticket.component';
+import { EticketComponent } from './Components/servicedesk/tickets/eticket/eticket.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'principal',pathMatch:'full'},
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path: 'servicedesk', component:SdusuarioComponent},
   {path: 'listaticket', component:ListaticketComponent},
   {path: 'tickets', component:TicketsComponent},
-
+  {path: 'verticket/:id', component:VticketComponent},
+  {path: 'editarticket/:id', component:EticketComponent},
+  
   {path: '**', redirectTo: 'principal', pathMatch:'full'},
 
 

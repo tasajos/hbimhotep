@@ -1,0 +1,32 @@
+<app-cabecera></app-cabecera>
+<br><br><br>
+<br><br><br>
+<app-navbar></app-navbar>
+
+<div class="title">
+    <H1>VER TICKET</H1> 
+</div>
+
+<div *ngIf="idticket != null"class="container">
+    
+    <mat-card class="card">
+        
+        <mat-card-title>{{idticket.codigo}}</mat-card-title>
+        <p></p>
+        <p></p>
+                   <mat-card-content>
+                <p><strong>Area:</strong>{{idticket.area}} </p>
+                <p><strong>Tipo:</strong> {{idticket.tipo}} </p>
+                <p><strong>Estado:</strong> {{idticket.estado}} </p>
+                <p><strong>Descripcion:</strong> {{idticket.descripcion}} </p>
+                
+                
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="primary" routerLink="/tickets">Volver</button>
+            </mat-card-actions>
+            
+            </mat-card>
+
+</div>
+    
