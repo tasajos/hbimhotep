@@ -16,6 +16,7 @@ export class SdeskService {
 
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/ReporteSD';
+  private Myapiurput: string = 'api/ReporteSD/';
   private Myapiurlp: string = 'api/ReporteSD';
   private Myapiurid: string = 'api/ReporteSD/';
   private Myapiurlsd: string = 'api/ReporteSD/nuevos';
@@ -57,6 +58,16 @@ export class SdeskService {
   
     }
 
+    updateticket(id: number, edticket: registroticket): Observable<void> {
+      return this.http.put<void>(`${this.Myappurl}${this.Myapiurput}${id}`, edticket);
+    }
+
+
+    addTickets  (tck: registroticket): Observable<registroticket>{
+
+      return this.http.post<registroticket>(`${this.Myappurl}${this.Myapiurl}`,tck);
+    
+    }
 //////////////////////////
 ///OTROS          ///////
 /////////////////////////

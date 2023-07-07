@@ -1,4 +1,6 @@
-﻿using imhotepbe.Models;
+﻿using imhotepbe.Migrations;
+using imhotepbe.Models;
+using imhotepbe.Models.Panel;
 using imhotepbe.Models.Reporte;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -102,6 +104,41 @@ namespace imhotepbe.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, updatesd ReporteSD)
+        {
+            try
+            {
+
+
+                if (id != ReporteSD.id)
+                {
+                    return BadRequest();
+                }
+
+                var ticketItem = await _context.ReporteSD.FindAsync(id);
+
+                if (ticketItem == null)
+                {
+                    return NotFound();
+                }
+                ticketItem.estado = ReporteSD.estado;
+                
+
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
 
     }
 
