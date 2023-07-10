@@ -20,6 +20,7 @@ export class SdeskService {
   private Myapiurlp: string = 'api/ReporteSD';
   private Myapiurid: string = 'api/ReporteSD/';
   private Myapiurlsd: string = 'api/ReporteSD/nuevos';
+  private Myapiurlst: string = 'api/ReporteSD/reportetipo';
 
 
 //constructor
@@ -36,6 +37,12 @@ export class SdeskService {
      
     return this.http.get<registroticket[]>(this.Myappurl+this.Myapiurlsd);
   }
+
+  gettiposreq(): Observable<registroticket[]> {
+     
+    return this.http.get<registroticket[]>(this.Myappurl+this.Myapiurlst);
+  }
+
 
     //addregistros (ticket: registroticket): Observable<registroticket>{
 

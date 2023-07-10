@@ -15,6 +15,7 @@ export class PanelService {
   private Myapiurlpi: string = 'api/Panel/iniciosesion/';
   private Myapiurlpic: string = 'api/Panel/iniciosesion/';
   private Myapiurlvt: string = 'api/Panel/variabletipo/';
+  
 
   constructor(private http: HttpClient) { }
 
