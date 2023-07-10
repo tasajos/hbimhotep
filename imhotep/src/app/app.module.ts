@@ -40,6 +40,7 @@ import { EticketComponent } from './Components/servicedesk/tickets/eticket/etick
 import { VticketComponent } from './Components/servicedesk/tickets/vticket/vticket.component';
 import { ChartsComponent } from './Components/charts/charts.component';
 import { DougnutComponent } from './Components/charts/dougnut/dougnut.component';
+import { C2nuevoComponent } from './Components/charts/c2nuevo/c2nuevo.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { DougnutComponent } from './Components/charts/dougnut/dougnut.component'
     EticketComponent,
     VticketComponent,
     ChartsComponent,
-    DougnutComponent
+    DougnutComponent,
+    C2nuevoComponent
 
 
   ],

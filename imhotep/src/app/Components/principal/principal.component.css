@@ -1,23 +1,28 @@
 .texprincipal {
-
-    text-align: center;
+  text-align: center;
 }
 
 .contenido {
-    width: 30%;
-    margin-left: 20px; /* Mover el contenido hacia la izquierda */
-    
+  margin-left: 40px; /* Agregar margen a la izquierda */
 }
-.chart-container {
-    width: 80%;
-    height: 300px; /* Ajusta el tamaño deseado */
-  }
 
-  .flex-container {
-    display: flex;
-  }
-  
-  .flex-item {
-    flex:1;
-  }
-  
+.chart-container {
+  width: 80%;
+  height: 300px; /* Ajusta el tamaño deseado */
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex: 1;
+}
+
+.row {
+  margin-top: 10px; /* Ajusta el margen superior según tus necesidades */
+}
+
+.col-lg-6 {
+  padding: 20px; /* Ajusta el relleno según tus necesidades */
+}

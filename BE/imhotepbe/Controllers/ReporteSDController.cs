@@ -162,6 +162,32 @@ namespace imhotepbe.Controllers
         }
 
 
+        [HttpGet("reportenuevotipo")]
+        public async Task<IActionResult> GetReporte()
+        {
+            try
+            {
+                var reporte = await _context.ReporteSD
+                    .Where(r => r.tipo == "Requerimiento" || r.tipo == "Incidente")
+                    .Where(r => r.estado == "Nuevo")
+                    .GroupBy(r => 1)
+                    .Select(g => new requdashboard
+                    {
+                        totalRequerimientos = g.Sum(r => r.tipo == "Requerimiento" ? 1 : 0),
+                        totalIncidentes = g.Sum(r => r.tipo == "Incidente" ? 1 : 0)
+                    })
+                    .ToListAsync();
+
+                return Ok(reporte);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
 
 
 
