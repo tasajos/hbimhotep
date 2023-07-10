@@ -146,12 +146,12 @@ namespace imhotepbe.Controllers
                 var reporte = await _context.ReporteSD
                     .Where(r => r.tipo == "Requerimiento" || r.tipo == "Incidente")
                     .GroupBy(r => 1)
-                    .Select(g => new
+                    .Select(g => new requdashboard
                     {
                         totalRequerimientos = g.Sum(r => r.tipo == "Requerimiento" ? 1 : 0),
                         totalIncidentes = g.Sum(r => r.tipo == "Incidente" ? 1 : 0)
                     })
-                    .FirstOrDefaultAsync();
+                    .ToListAsync();
 
                 return Ok(reporte);
             }

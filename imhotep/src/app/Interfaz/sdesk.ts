@@ -9,3 +9,12 @@ export interface registroticket {
     
     
     }
+
+    export interface ticketdashboard {
+        // Otras propiedades de la interfaz...
+      
+        totalRequerimientos: number;
+        totalIncidentes: number;
+      
+        // Otras propiedades de la interfaz...
+      }

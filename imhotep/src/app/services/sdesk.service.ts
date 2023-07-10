@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import {registroticket  } from '../Interfaz/sdesk';
+import {registroticket,ticketdashboard  } from '../Interfaz/sdesk';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -38,9 +38,9 @@ export class SdeskService {
     return this.http.get<registroticket[]>(this.Myappurl+this.Myapiurlsd);
   }
 
-  gettiposreq(): Observable<registroticket[]> {
+  gettiposreq(): Observable<ticketdashboard[]> {
      
-    return this.http.get<registroticket[]>(this.Myappurl+this.Myapiurlst);
+    return this.http.get<ticketdashboard[]>(this.Myappurl+this.Myapiurlst);
   }
 
 
