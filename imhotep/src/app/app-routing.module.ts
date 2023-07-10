@@ -13,6 +13,7 @@ import { ListaticketComponent } from './Components/servicedesk/listaticket/lista
 import { TicketsComponent } from './Components/servicedesk/tickets/tickets.component';
 import { VticketComponent } from './Components/servicedesk/tickets/vticket/vticket.component';
 import { EticketComponent } from './Components/servicedesk/tickets/eticket/eticket.component';
+import { ChartsComponent } from './Components/charts/charts.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'principal',pathMatch:'full'},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'tickets', component:TicketsComponent},
   {path: 'verticket/:id', component:VticketComponent},
   {path: 'editarticket/:id', component:EticketComponent},
+  {path: 'charts', component:ChartsComponent},
   
   {path: '**', redirectTo: 'principal', pathMatch:'full'},
 

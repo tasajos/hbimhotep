@@ -8,3 +8,16 @@
     margin-left: 20px; /* Mover el contenido hacia la izquierda */
     
 }
+.chart-container {
+    width: 80%;
+    height: 300px; /* Ajusta el tamaño deseado */
+  }
+
+  .flex-container {
+    display: flex;
+  }
+  
+  .flex-item {
+    flex:1;
+  }
+  

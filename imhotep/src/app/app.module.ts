@@ -38,6 +38,8 @@ import { ListaticketComponent } from './Components/servicedesk/listaticket/lista
 import { TicketsComponent } from './Components/servicedesk/tickets/tickets.component';
 import { EticketComponent } from './Components/servicedesk/tickets/eticket/eticket.component';
 import { VticketComponent } from './Components/servicedesk/tickets/vticket/vticket.component';
+import { ChartsComponent } from './Components/charts/charts.component';
+import { DougnutComponent } from './Components/charts/dougnut/dougnut.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { VticketComponent } from './Components/servicedesk/tickets/vticket/vtick
     ListaticketComponent,
     TicketsComponent,
     EticketComponent,
-    VticketComponent
+    VticketComponent,
+    ChartsComponent,
+    DougnutComponent
 
 
   ],

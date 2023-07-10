@@ -138,6 +138,31 @@ namespace imhotepbe.Controllers
         }
 
 
+        [HttpGet("reportetipo")]
+        public async Task<IActionResult> GetReportetipo()
+        {
+            try
+            {
+                var reporte = await _context.ReporteSD
+                    .Where(r => r.tipo == "Requerimiento" || r.tipo == "Incidente")
+                    .GroupBy(r => 1)
+                    .Select(g => new
+                    {
+                        totalRequerimientos = g.Sum(r => r.tipo == "Requerimiento" ? 1 : 0),
+                        totalIncidentes = g.Sum(r => r.tipo == "Incidente" ? 1 : 0)
+                    })
+                    .FirstOrDefaultAsync();
+
+                return Ok(reporte);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+
 
 
     }
