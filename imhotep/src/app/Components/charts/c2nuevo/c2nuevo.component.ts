@@ -62,7 +62,7 @@ export class C2nuevoComponent implements OnInit {
       data: {
         labels: ['Incidente', 'Requerimiento'],
         datasets: [{
-          label: '#',
+          label: '# Nuevos',
           data: [this.totalIncidentes, this.totalRequerimientos],
           borderWidth: 2,
           backgroundColor: [
