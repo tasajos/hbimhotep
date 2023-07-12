@@ -14,6 +14,12 @@
 
         public string estado { get; set; }
 
+        public string asignado { get; set; }
+
+        public string comentariofinal { get; set; }
+
+        public string fechasd { get; set; }
+
         public DateTime FechaCreacion { get; set; }
     }
 }

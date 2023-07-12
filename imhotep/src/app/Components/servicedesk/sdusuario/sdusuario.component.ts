@@ -30,6 +30,9 @@ export class SdusuarioComponent implements OnInit {
       tipo: ['', Validators.required],
       descripcion: ['', Validators.required],
       estado: ['', Validators.required],
+      fechasd: ['', Validators.required],
+      asignado: [''],
+      comentariofinal: [''],
  
          });
   }
@@ -44,6 +47,9 @@ export class SdusuarioComponent implements OnInit {
         tipo: this.formulario.value.tipo,
         descripcion: this.formulario.value.descripcion,
         estado: this.formulario.value.estado,
+        asignado: this.formulario.value.asignado,
+        comentariofinal: this.formulario.value.comentariofinal,
+        fechasd: this.formulario.value.fechasd,
       };
   
       // Enviamos objeto al backend
@@ -67,7 +73,9 @@ export class SdusuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+const fechaActual = new Date().toLocaleDateString();
+    this.formulario.patchValue({ fechasd: fechaActual });
+   // Lógica del campo
  
    // Lógica del campo
 }

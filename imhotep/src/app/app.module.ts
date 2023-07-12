@@ -16,6 +16,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatSortModule } from '@angular/material/sort';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +45,10 @@ import { VticketComponent } from './Components/servicedesk/tickets/vticket/vtick
 import { ChartsComponent } from './Components/charts/charts.component';
 import { DougnutComponent } from './Components/charts/dougnut/dougnut.component';
 import { C2nuevoComponent } from './Components/charts/c2nuevo/c2nuevo.component';
+import { SispcComponent } from './Components/panel/sispc/sispc.component';
+import { ConocimientoComponent } from './Components/conocimiento/conocimiento.component';
+import { NscursoComponent } from './Components/conocimiento/nscurso/nscurso.component';
+import { NsdetailComponent } from './Components/conocimiento/nsdetail/nsdetail.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +72,11 @@ import { C2nuevoComponent } from './Components/charts/c2nuevo/c2nuevo.component'
     VticketComponent,
     ChartsComponent,
     DougnutComponent,
-    C2nuevoComponent
+    C2nuevoComponent,
+    SispcComponent,
+    ConocimientoComponent,
+    NscursoComponent,
+    NsdetailComponent
 
 
   ],
@@ -86,7 +98,10 @@ import { C2nuevoComponent } from './Components/charts/c2nuevo/c2nuevo.component'
     MatDialogModule,
     MatTableModule,
     MatPaginatorModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    MatSortModule
+
     
     
   ],

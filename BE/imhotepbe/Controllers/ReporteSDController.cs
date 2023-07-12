@@ -110,8 +110,6 @@ namespace imhotepbe.Controllers
         {
             try
             {
-
-
                 if (id != ReporteSD.id)
                 {
                     return BadRequest();
@@ -123,19 +121,21 @@ namespace imhotepbe.Controllers
                 {
                     return NotFound();
                 }
+
                 ticketItem.estado = ReporteSD.estado;
-                
+                ticketItem.asignado = ReporteSD.asignado;
+                ticketItem.comentariofinal = ReporteSD.comentariofinal;
 
                 await _context.SaveChangesAsync();
 
                 return NoContent();
-
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
 
 
         [HttpGet("reportetipo")]

@@ -29,6 +29,8 @@ export class EticketComponent {
     this.formulario = this.fb.group({
     
       estado: ['', Validators.required],
+      asignado: ['', Validators.required],
+      comentariofinal: ['', Validators.required],
      
         
       
@@ -40,7 +42,9 @@ export class EticketComponent {
       //armamos el objeto
        const rticket: registroticket = {
        
-        estado: this.formulario.value.estado
+        estado: this.formulario.value.estado,
+        asignado: this.formulario.value.asignado,
+        comentariofinal: this.formulario.value.comentariofinal,
             
        }
   

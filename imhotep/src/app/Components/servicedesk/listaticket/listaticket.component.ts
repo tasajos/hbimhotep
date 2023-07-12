@@ -15,7 +15,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 export class ListaticketComponent implements OnInit,AfterViewInit {
 
 
-  displayedColumns: string[] = ['codigo','tipo','area','estado','descripcion'];
+  displayedColumns: string[] = ['codigo','tipo','area','estado','descripcion','fechasd'];
   dataSource = new MatTableDataSource<registroticket>();
   loading:boolean =false;
   data: any[] = [];

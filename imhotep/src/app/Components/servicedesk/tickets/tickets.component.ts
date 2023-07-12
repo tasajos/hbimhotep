@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatSort,MatSortModule } from '@angular/material/sort';
+
 import { MatTableDataSource } from '@angular/material/table';
 import { registroticket } from 'src/app/Interfaz/sdesk';
 import { SdeskService} from 'src/app/services/sdesk.service';
@@ -15,7 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 export class TicketsComponent implements OnInit,AfterViewInit {
 
 
-  displayedColumns: string[] = ['codigo','tipo','area','estado','descripcion','acciones'];
+  displayedColumns: string[] = ['codigo','tipo','area','estado','descripcion','fechasd','acciones'];
   dataSource = new MatTableDataSource<registroticket>();
   loading:boolean =false;
   data: any[] = [];
@@ -23,7 +24,7 @@ export class TicketsComponent implements OnInit,AfterViewInit {
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild('table') table: any;
+   @ViewChild('table') table: any;
 
   constructor (private _ractivoservice:SdeskService,
     private _snackBar: MatSnackBar,) {}

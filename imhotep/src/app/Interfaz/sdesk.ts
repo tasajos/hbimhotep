@@ -6,8 +6,10 @@ export interface registroticket {
     descripcion?:string,
     estado:string,
     codigo?:number,
-    
-    
+    asignado?:string,
+    comentariofinal?:string,
+    fechasd?:string,
+        
     }
 
     export interface ticketdashboard {

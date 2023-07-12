@@ -11,9 +11,9 @@
 <br>
     <mat-form-field>
         <mat-label>Filtrar</mat-label>
-        <input matInput (keyup)="applyFilter($event)"  placeholder="Codigo" #input autocomplete="off">
+        <input matInput (keyup)="applyFilter($event)"  placeholder="Codigo" #input autocomplete="off" >
       </mat-form-field>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z2 black-text table-bordered" matSort>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z2 black-text table-bordered" matSort #table>
     
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
@@ -38,6 +38,10 @@
           <ng-container matColumnDef="descripcion">
             <th mat-header-cell *matHeaderCellDef> Descripcion </th>
             <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+          </ng-container>
+          <ng-container matColumnDef="fechasd">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{element.fechasd}} </td>
           </ng-container>
       
                  
